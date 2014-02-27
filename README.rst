@@ -34,7 +34,7 @@ The following is example config, which accepts data::
 
     LoadPlugin zeromq_estp
     <Plugin "zeromq_estp">
-      <Socket Subscribe>
+      <Socket SUB>
         HWM 1000
         Bind "tcp://*:6666"
       </Socket>
@@ -47,7 +47,7 @@ collectd instance or any other processing application::
 
     LoadPlugin zeromq_estp
     <Plugin "zeromq_estp">
-      <Socket Publish>
+      <Socket PUB>
         HWM 1000
         Connect "tcp://host.example.com:6666"
       </Socket>
@@ -57,8 +57,8 @@ Note: if you have write filters enabled, do not forget to add "zeromq_estp"
 plugin to your "write" target.
 
 The ``Connect`` and ``Bind`` directives both can be used in any socket types,
-and can be used multiple times. ``Pull`` socket can be used instead
-``Subscribe``, likewise ``Push`` socket can be used instead ``Publish``.
+and can be used multiple times. ``PULL`` socket can be used instead
+``SUB``, likewise ``PUSH`` socket can be used instead ``PUB``.
 However, this is rarely useful in practice. For more information refer to
 zeromq documentation.
 
